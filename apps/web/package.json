@@ -2,7 +2,6 @@
   "name": "1chooo-com",
   "version": "0.7.1",
   "private": true,
-  "type": "module",
   "license": "CC-BY-4.0",
   "author": {
     "name": "1chooo",
