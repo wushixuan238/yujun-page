@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "framework": "nextjs",
+  "installCommand": "npm install -g pnpm@10.8.0 && pnpm install --ignore-scripts",
+  "buildCommand": "pnpm run build",
+  "outputDirectory": ".next",
+  "rewrites": [
+    {"source": "/(.*)", "destination": "/$1"}
+  ],
+  "env": {
+    "VERCEL_DEEP_CLONE": "true"
+  }
+}

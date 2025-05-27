@@ -1,0 +1,640 @@
+/* 明亮模式覆盖样式 - 完全白色背景 */
+:root[data-mode="light"] {
+  /* 背景色全部改为白色系 */
+  --smoky-black: #ffffff;
+  --eerie-black-1: #ffffff;
+  --eerie-black-2: #ffffff;
+  --onyx: #ffffff;
+  --bg-gradient-onyx: none;
+  --bg-gradient-jet: none;
+  
+  /* 边框和分隔线 */
+  --jet: #e6e9ed;
+  
+  /* 文本颜色 - 在白色背景上使用黑色文本 */
+  --light-gray: #000000;
+  --light-gray-70: rgba(0, 0, 0, 0.7);
+  --white-1: #000000;
+  --white-2: #333333;
+  
+  /* 强调色保持不变，确保一致性 */
+  --orange-yellow-crayola: hsl(210, 100%, 72%);
+  
+  /* 阴影颜色调整为浅色 */
+  --shadow-1: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --shadow-2: 0 6px 15px rgba(0, 0, 0, 0.05);
+  --shadow-3: 0 8px 20px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 10px 25px rgba(0, 0, 0, 0.05);
+  --shadow-5: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* 明亮模式下的文本颜色 */
+:root[data-mode="light"] body {
+  background: var(--smoky-black);
+  color: #000000;
+  font-weight: 400;
+}
+
+/* 明亮模式下的所有文本元素 */
+:root[data-mode="light"] p,
+:root[data-mode="light"] span,
+:root[data-mode="light"] div,
+:root[data-mode="light"] li,
+:root[data-mode="light"] td,
+:root[data-mode="light"] th,
+:root[data-mode="light"] label,
+:root[data-mode="light"] input,
+:root[data-mode="light"] textarea,
+:root[data-mode="light"] h1,
+:root[data-mode="light"] h2,
+:root[data-mode="light"] h3,
+:root[data-mode="light"] h4,
+:root[data-mode="light"] h5,
+:root[data-mode="light"] h6 {
+  color: #000000 !important;
+}
+
+/* 侧边栏中的名字和文本 */
+:root[data-mode="light"] .sidebar h1,
+:root[data-mode="light"] .sidebar h2,
+:root[data-mode="light"] .sidebar h3,
+:root[data-mode="light"] .sidebar h4,
+:root[data-mode="light"] .sidebar h5,
+:root[data-mode="light"] .sidebar h6,
+:root[data-mode="light"] .sidebar .h1,
+:root[data-mode="light"] .sidebar .h2,
+:root[data-mode="light"] .sidebar .h3,
+:root[data-mode="light"] .sidebar .h4,
+:root[data-mode="light"] .sidebar .h5,
+:root[data-mode="light"] .sidebar .h6,
+:root[data-mode="light"] .sidebar p,
+:root[data-mode="light"] .sidebar span,
+:root[data-mode="light"] .sidebar div {
+  color: #000000 !important;
+}
+
+/* 特别重点强调侧边栏中的姓名 - 更具体的选择器 */
+:root[data-mode="light"] .sidebar h1,
+:root[data-mode="light"] h1,
+:root[data-mode="light"] [class*="name"],
+:root[data-mode="light"] [class*="title"],
+:root[data-mode="light"] [class*="heading"],
+:root[data-mode="light"] .sidebar [class*="name"],
+:root[data-mode="light"] .sidebar [class*="title"],
+:root[data-mode="light"] .sidebar [class*="heading"],
+:root[data-mode="light"] h1.name,
+:root[data-mode="light"] h1[class*="name"],
+:root[data-mode="light"] .sidebar h1.name,
+:root[data-mode="light"] .sidebar h1[class*="name"] {
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+/* 直接针对侧边栏中的姓名元素 */
+:root[data-mode="light"] .sidebar > div > h1,
+:root[data-mode="light"] .sidebar > div > div > h1,
+:root[data-mode="light"] .sidebar > div > div > div > h1,
+:root[data-mode="light"] .sidebar > div > div > div > div > h1 {
+  color: #000000 !important;
+  font-weight: bold !important;
+}
+
+/* 强制所有文本元素为黑色 */
+:root[data-mode="light"] *:not(button):not([role="button"]):not([class*="btn"]):not(a):not(svg):not(path) {
+  color: #000000 !important;
+}
+
+/* 强制覆盖可能的内联样式 */
+:root[data-mode="light"] [style*="color"],
+:root[data-mode="light"] [style*="Color"] {
+  color: #000000 !important;
+}
+
+/* 明亮模式下强制所有背景为白色 */
+:root[data-mode="light"] .main-content,
+:root[data-mode="light"] main,
+:root[data-mode="light"] div,
+:root[data-mode="light"] section {
+  background-color: #ffffff !important;
+}
+
+/* 明亮模式下的卡片内容 */
+:root[data-mode="light"] .project-item,
+:root[data-mode="light"] .blog-post-item,
+:root[data-mode="light"] .timeline-item,
+:root[data-mode="light"] .filter-item {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* 明亮模式下的卡片背景 */
+:root[data-mode="light"] .sidebar,
+:root[data-mode="light"] article {
+  background: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 明亮模式下的标题颜色 */
+:root[data-mode="light"] .h2,
+:root[data-mode="light"] .h3,
+:root[data-mode="light"] .h4,
+:root[data-mode="light"] .h5,
+:root[data-mode="light"] h1,
+:root[data-mode="light"] h2,
+:root[data-mode="light"] h3,
+:root[data-mode="light"] h4,
+:root[data-mode="light"] h5,
+:root[data-mode="light"] h6 {
+  color: #000000 !important;
+  font-weight: 600;
+}
+
+/* 明亮模式下的链接颜色 */
+:root[data-mode="light"] a {
+  color: var(--orange-yellow-crayola);
+  text-decoration: none;
+}
+
+:root[data-mode="light"] a:hover {
+  text-decoration: underline;
+}
+
+/* 明亮模式下的导航栏 */
+:root[data-mode="light"] header {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border: none !important;
+  box-shadow: none !important;
+}
+
+:root[data-mode="light"] header a {
+  color: #000000 !important;
+  font-weight: 500;
+}
+
+:root[data-mode="light"] header a:hover,
+:root[data-mode="light"] header a.active {
+  color: var(--orange-yellow-crayola) !important;
+}
+
+/* 明亮模式下的滚动条 */
+:root[data-mode="light"] ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+:root[data-mode="light"] ::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border: 5px solid #f1f1f1;
+}
+
+/* 明亮模式下的按钮样式 */
+:root[data-mode="light"] button {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* 明亮模式下的黑色卡片背景强制改为白色 */
+:root[data-mode="light"] [class*="bg-"],
+:root[data-mode="light"] [style*="background"],
+:root[data-mode="light"] [class*="background"] {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+/* 明亮模式下的所有黑色元素 */
+:root[data-mode="light"] .black,
+:root[data-mode="light"] .dark,
+:root[data-mode="light"] [class*="bg-black"],
+:root[data-mode="light"] [class*="bg-dark"],
+:root[data-mode="light"] [style*="background-color: black"],
+:root[data-mode="light"] [style*="background-color: #000"] {
+  background-color: #ffffff !important;
+}
+
+/* 明亮模式下的图标颜色和背景 */
+:root[data-mode="light"] svg,
+:root[data-mode="light"] i,
+:root[data-mode="light"] .icon {
+  color: #000000 !important;
+  fill: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* 明亮模式下的图标容器 */
+:root[data-mode="light"] [class*="icon-"],
+:root[data-mode="light"] .icon-container,
+:root[data-mode="light"] .icon-wrapper,
+:root[data-mode="light"] [class*="icon-box"],
+:root[data-mode="light"] .icon-box {
+  background-color: #ffffff !important;
+}
+
+/* 明亮模式下的侧边栏图标 */
+:root[data-mode="light"] .sidebar svg,
+:root[data-mode="light"] .sidebar i,
+:root[data-mode="light"] .sidebar .icon,
+:root[data-mode="light"] .sidebar [class*="icon-"],
+:root[data-mode="light"] .sidebar a svg,
+:root[data-mode="light"] .sidebar a i,
+:root[data-mode="light"] .sidebar a .icon {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* 明亮模式下侧边栏中的图标容器 */
+:root[data-mode="light"] .sidebar .icon-box,
+:root[data-mode="light"] .sidebar [class*="icon-box"],
+:root[data-mode="light"] .sidebar .contact-info li > div,
+:root[data-mode="light"] .sidebar .contact-info a > div {
+  background-color: #ffffff !important;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 明亮模式下强制所有白色文本变为黑色 */
+:root[data-mode="light"] [class*="text-white"],
+:root[data-mode="light"] [class*="text-light"],
+:root[data-mode="light"] [style*="color: white"],
+:root[data-mode="light"] [style*="color: #fff"],
+:root[data-mode="light"] [style*="color: rgb(255"] {
+  color: #000000 !important;
+}
+
+/* 直接针对图片中显示的具体图标容器 */
+:root[data-mode="light"] .contact-info .icon-box,
+:root[data-mode="light"] .contact-info [class*="icon-box"],
+:root[data-mode="light"] .contact-info li > div:first-child,
+:root[data-mode="light"] .contact-info a > div:first-child,
+:root[data-mode="light"] .sidebar li > div:first-child,
+:root[data-mode="light"] .sidebar a > div:first-child {
+  background-color: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 图标容器内的图标 - 蓝色 */
+:root[data-mode="light"] .contact-info .icon-box svg,
+:root[data-mode="light"] .contact-info [class*="icon-box"] svg,
+:root[data-mode="light"] .contact-info li > div:first-child svg,
+:root[data-mode="light"] .contact-info a > div:first-child svg,
+:root[data-mode="light"] .sidebar li > div:first-child svg,
+:root[data-mode="light"] .sidebar a > div:first-child svg,
+:root[data-mode="light"] [class*="icon"] svg {
+  fill: #1c7ed6 !important;
+  color: #1c7ed6 !important;
+  stroke: #1c7ed6 !important;
+}
+
+/* 个人资料中的图标容器 - 白底蓝色图标 */
+:root[data-mode="light"] .location,
+:root[data-mode="light"] .email,
+:root[data-mode="light"] .github,
+:root[data-mode="light"] [class*="LOCATION"],
+:root[data-mode="light"] [class*="EMAIL"],
+:root[data-mode="light"] [class*="GITHUB"],
+:root[data-mode="light"] div[style*="background-color: black"],
+:root[data-mode="light"] div[style*="background-color: #000"],
+:root[data-mode="light"] div[style*="background: black"],
+:root[data-mode="light"] div[style*="background: #000"] {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 个人资料中的图标 - 蓝色 */
+:root[data-mode="light"] .location svg,
+:root[data-mode="light"] .email svg,
+:root[data-mode="light"] .github svg,
+:root[data-mode="light"] [class*="LOCATION"] svg,
+:root[data-mode="light"] [class*="EMAIL"] svg,
+:root[data-mode="light"] [class*="GITHUB"] svg,
+:root[data-mode="light"] div[style*="background-color: black"] svg,
+:root[data-mode="light"] div[style*="background-color: #000"] svg,
+:root[data-mode="light"] div[style*="background: black"] svg,
+:root[data-mode="light"] div[style*="background: #000"] svg {
+  fill: #1c7ed6 !important;
+  color: #1c7ed6 !important;
+}
+
+/* 更具体的选择器来针对图片中的图标容器 */
+:root[data-mode="light"] img + div,
+:root[data-mode="light"] .sidebar img ~ div,
+:root[data-mode="light"] .sidebar > div > div,
+:root[data-mode="light"] .sidebar div div[style*="background"],
+:root[data-mode="light"] .sidebar > div > a > div,
+:root[data-mode="light"] .sidebar > div > a > div > div {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* 强制覆盖所有黑色背景的元素 */
+:root[data-mode="light"] * {
+  background-color: #ffffff !important;
+}
+
+/* 重要: 确保在白色背景上显示黑色文本 */
+:root[data-mode="light"] * {
+  color: #000000 !important;
+}
+
+/* 确保侧边栏中的所有元素都使用白色背景 */
+:root[data-mode="light"] .sidebar,
+:root[data-mode="light"] .sidebar *,
+:root[data-mode="light"] .sidebar > *,
+:root[data-mode="light"] .sidebar > * > *,
+:root[data-mode="light"] .sidebar > * > * > * {
+  background-color: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 移除大多数边界线，但保留图标容器的边框 */
+:root[data-mode="light"] *:not([class*="icon"]):not(.location):not(.email):not(.github):not([class*="LOCATION"]):not([class*="EMAIL"]):not([class*="GITHUB"]),
+:root[data-mode="light"] *:not([class*="icon"]):not(.location):not(.email):not(.github):not([class*="LOCATION"]):not([class*="EMAIL"]):not([class*="GITHUB"])::before,
+:root[data-mode="light"] *:not([class*="icon"]):not(.location):not(.email):not(.github):not([class*="LOCATION"]):not([class*="EMAIL"]):not([class*="GITHUB"])::after {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* 移除分隔线 */
+:root[data-mode="light"] .separator,
+:root[data-mode="light"] hr,
+:root[data-mode="light"] [class*="divider"],
+:root[data-mode="light"] [class*="separator"] {
+  display: none !important;
+}
+
+/* 移除卡片和文章元素的边框 */
+:root[data-mode="light"] .card,
+:root[data-mode="light"] .article,
+:root[data-mode="light"] [class*="card"],
+:root[data-mode="light"] [class*="article"],
+:root[data-mode="light"] [class*="box"],
+:root[data-mode="light"] [class*="container"] {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 移除图片边框，但保留图标边框 */
+:root[data-mode="light"] img:not([class*="icon"]) {
+  border: none !important;
+}
+
+/* 强制覆盖图标容器样式，确保白底蓝色图标 - 使用更强力的选择器 */
+:root[data-mode="light"] [class*="icon"],
+:root[data-mode="light"] [role="img"],
+:root[data-mode="light"] .sidebar .icon,
+:root[data-mode="light"] .contact-icon,
+:root[data-mode="light"] .social-icon,
+:root[data-mode="light"] .contact-info div,
+:root[data-mode="light"] .location,
+:root[data-mode="light"] .email,
+:root[data-mode="light"] .github,
+:root[data-mode="light"] div[style*="background:#000"],
+:root[data-mode="light"] div[style*="background: #000"],
+:root[data-mode="light"] div[style*="background:#000000"],
+:root[data-mode="light"] div[style*="background: #000000"],
+:root[data-mode="light"] div[style*="background:black"],
+:root[data-mode="light"] div[style*="background: black"],
+:root[data-mode="light"] div[style*="background-color:#000"],
+:root[data-mode="light"] div[style*="background-color: #000"],
+:root[data-mode="light"] div[style*="background-color:#000000"],
+:root[data-mode="light"] div[style*="background-color: #000000"],
+:root[data-mode="light"] div[style*="background-color:black"],
+:root[data-mode="light"] div[style*="background-color: black"] {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 特别针对图标容器 - 精确选择器 */
+:root[data-mode="light"] .location,
+:root[data-mode="light"] .email,
+:root[data-mode="light"] .github,
+:root[data-mode="light"] .LOCATION,
+:root[data-mode="light"] .EMAIL,
+:root[data-mode="light"] .GITHUB,
+:root[data-mode="light"] [id*="location"],
+:root[data-mode="light"] [id*="email"],
+:root[data-mode="light"] [id*="github"] {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+}
+
+/* 图标容器内的所有元素都要白色背景 */
+:root[data-mode="light"] .location *,
+:root[data-mode="light"] .email *,
+:root[data-mode="light"] .github *,
+:root[data-mode="light"] .LOCATION *,
+:root[data-mode="light"] .EMAIL *,
+:root[data-mode="light"] .GITHUB *,
+:root[data-mode="light"] [id*="location"] *,
+:root[data-mode="light"] [id*="email"] *,
+:root[data-mode="light"] [id*="github"] * {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* 重要: 使用!important覆盖内联样式 */
+:root[data-mode="light"] div[style*="background"],
+:root[data-mode="light"] span[style*="background"],
+:root[data-mode="light"] a[style*="background"] {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+:root[data-mode="light"] [class*="icon"] svg,
+:root[data-mode="light"] [role="img"] svg,
+:root[data-mode="light"] .sidebar .icon svg,
+:root[data-mode="light"] .contact-icon svg,
+:root[data-mode="light"] .social-icon svg,
+:root[data-mode="light"] .contact-info div svg,
+:root[data-mode="light"] .location svg,
+:root[data-mode="light"] .email svg,
+:root[data-mode="light"] .github svg {
+  fill: #1c7ed6 !important;
+  color: #1c7ed6 !important;
+  stroke: #1c7ed6 !important;
+}
+
+/* 贡献图表中的方块 */
+:root[data-mode="light"] [class*="contribution"] rect,
+:root[data-mode="light"] [class*="calendar"] rect,
+:root[data-mode="light"] [class*="graph"] rect,
+:root[data-mode="light"] svg rect {
+  fill: #e6e9ed !important;
+  stroke: #ffffff !important;
+}
+
+/* 评论区样式 */
+:root[data-mode="light"] .comments,
+:root[data-mode="light"] [class*="comment"],
+:root[data-mode="light"] [class*="reaction"],
+:root[data-mode="light"] [id*="comment"],
+:root[data-mode="light"] [id*="reaction"] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #e0e0e0 !important;
+}
+
+/* 评论区的文本输入区 */
+:root[data-mode="light"] textarea,
+:root[data-mode="light"] .editor-area,
+:root[data-mode="light"] [class*="editor"],
+:root[data-mode="light"] [class*="markdown"],
+:root[data-mode="light"] [role="textbox"] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+/* 评论区的按钮 */
+:root[data-mode="light"] .comments button,
+:root[data-mode="light"] [class*="comment"] button,
+:root[data-mode="light"] [id*="comment"] button {
+  background-color: #f8f9fa !important;
+  color: #000000 !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+/* Sign in with GitHub 按钮 */
+:root[data-mode="light"] [class*="login"],
+:root[data-mode="light"] [class*="sign-in"],
+:root[data-mode="light"] [class*="button"][class*="github"] {
+  background-color: #1c7ed6 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+/* 评论区的分隔线和边框 */
+:root[data-mode="light"] .comments hr,
+:root[data-mode="light"] [class*="comment"] hr,
+:root[data-mode="light"] [id*="comment"] hr {
+  border-color: #e0e0e0 !important;
+  background-color: #e0e0e0 !important;
+}
+
+/* 评论区的标签页 */
+:root[data-mode="light"] .comments .tab,
+:root[data-mode="light"] [class*="comment"] .tab,
+:root[data-mode="light"] [id*="comment"] .tab,
+:root[data-mode="light"] [role="tab"] {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-bottom: 2px solid transparent !important;
+}
+
+:root[data-mode="light"] .comments .tab.active,
+:root[data-mode="light"] [class*="comment"] .tab.active,
+:root[data-mode="light"] [id*="comment"] .tab.active,
+:root[data-mode="light"] [role="tab"][aria-selected="true"] {
+  border-bottom: 2px solid #1c7ed6 !important;
+  color: #1c7ed6 !important;
+}
+
+/* 类似联系方式的图标盒子 - 最强力的覆盖 */
+:root[data-mode="light"] .sidebar div > div {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+/* 特殊情况下的图标容器 */
+:root[data-mode="light"] [style*="width: 2.5rem"][style*="height: 2.5rem"],
+:root[data-mode="light"] [style*="width:2.5rem"][style*="height:2.5rem"],
+:root[data-mode="light"] [style*="width: 40px"][style*="height: 40px"],
+:root[data-mode="light"] [style*="width:40px"][style*="height:40px"] {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+}
+
+/* 强制所有的div都有白色背景，除非它有颜色类或者有特别指定 */
+:root[data-mode="light"] div:not([class*="button"]):not([class*="btn"]):not([role="button"]) {
+  background-color: #ffffff !important;
+}
+
+/* 重要：确保解决图片容器的黑色背景问题 */
+:root[data-mode="light"] img + div,
+:root[data-mode="light"] img ~ div,
+:root[data-mode="light"] img + span,
+:root[data-mode="light"] img ~ span,
+:root[data-mode="light"] img + a > div,
+:root[data-mode="light"] img ~ a > div {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+/* 贡献图表中的活跃方块 - 使用蓝色系 */
+:root[data-mode="light"] [class*="contribution"] rect[data-level="1"],
+:root[data-mode="light"] [class*="calendar"] rect[data-level="1"],
+:root[data-mode="light"] [class*="graph"] rect[data-level="1"] {
+  fill: #a5d8ff !important;
+}
+
+:root[data-mode="light"] [class*="contribution"] rect[data-level="2"],
+:root[data-mode="light"] [class*="calendar"] rect[data-level="2"],
+:root[data-mode="light"] [class*="graph"] rect[data-level="2"] {
+  fill: #74c0fc !important;
+}
+
+:root[data-mode="light"] [class*="contribution"] rect[data-level="3"],
+:root[data-mode="light"] [class*="calendar"] rect[data-level="3"],
+:root[data-mode="light"] [class*="graph"] rect[data-level="3"] {
+  fill: #4dabf7 !important;
+}
+
+:root[data-mode="light"] [class*="contribution"] rect[data-level="4"],
+:root[data-mode="light"] [class*="calendar"] rect[data-level="4"],
+:root[data-mode="light"] [class*="graph"] rect[data-level="4"] {
+  fill: #1c7ed6 !important;
+}
+
+/* 强制覆盖具有黑色背景的元素 */
+:root[data-mode="light"] [style*="background-color: rgb(0, 0, 0)"],
+:root[data-mode="light"] [style*="background-color: #000"],
+:root[data-mode="light"] [style*="background-color: black"],
+:root[data-mode="light"] [style*="background-color: rgba(0, 0, 0"],
+:root[data-mode="light"] [style*="background: rgb(0, 0, 0)"],
+:root[data-mode="light"] [style*="background: #000"],
+:root[data-mode="light"] [style*="background: black"],
+:root[data-mode="light"] [style*="background: rgba(0, 0, 0"] {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+/* 明亮模式下的代码块和引用 */
+:root[data-mode="light"] pre,
+:root[data-mode="light"] code {
+  background-color: #f0f2f5;
+  color: #1a1a1a;
+  border: 1px solid var(--jet);
+}
+
+/* 明亮模式下的表格 */
+:root[data-mode="light"] table {
+  border-color: var(--jet);
+}
+
+:root[data-mode="light"] th,
+:root[data-mode="light"] td {
+  border-color: var(--jet);
+}
+
+/* 明亮模式下的分隔线 */
+:root[data-mode="light"] .separator {
+  background: var(--jet);
+}
+
+/* 明亮模式下的图片边框 */
+:root[data-mode="light"] img {
+  border: 1px solid var(--jet);
+}
