@@ -1,5 +1,5 @@
 ---
-title: "DDD入门(五)：DDD 的分层架构"  
+title: "DDD入门(三)：DDD 的分层架构"  
 category: "DDD"  
 publishedAt: "2025-05-01"  
 summary: "DDD入门系列"  
