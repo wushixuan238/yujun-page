@@ -1,5 +1,5 @@
 ---
-title: "DDD入门(二)：应用架构"  
+title: "MVCC：优雅的并发解决方案"  
 category: "Interview"  
 publishedAt: "2025-05-29"  
 summary: "面试题整理"  
