@@ -5,7 +5,7 @@ publishedAt: "2025-05-29"
 summary: "面试题整理"  
 tags:  
   - 面试题整理
-banner: /images/banner/posts/0001-two-sum.webp 
+banner: /images/banner/posts/mvcc-yujun.png
 alt: "图片替代文本"  
 mathjax: false
 ---
