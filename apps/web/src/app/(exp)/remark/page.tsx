@@ -5,12 +5,12 @@ import PageHeader from "@/components/page-header";
 
 // 静态备份数据
 const fallbackPost = {
-  title: "欢迎来到Hugo的博客",
+  title: "欢迎来到Yujun的博客",
   coverImage: "/images/banner/posts/0001-two-sum.webp",
   date: "2025-01-01",
   author: { name: "1chooo", picture: "https://github.com/1chooo.png" },
   slug: "welcome",
-  excerpt: "这里是Hugo的博客，分享技术和生活。"
+  excerpt: "这里是Yujun的博客，分享技术和生活。"
 };
 
 export default function Index() {
@@ -20,7 +20,7 @@ export default function Index() {
 
   return (
     <article>
-      <PageHeader header="Hugo's Blog" />
+      <PageHeader header="Yujun's Blog" />
       <Container>
         {heroPost ? (
           <HeroPost

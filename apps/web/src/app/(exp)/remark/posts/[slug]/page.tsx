@@ -21,7 +21,7 @@ export default async function Post(props: Params) {
 
   return (
     <article>
-      <PageHeader header="Hugo's Blog" />
+      <PageHeader header="Yujun's Blog" />
       <Container>
         <Header />
         <PostHeader
