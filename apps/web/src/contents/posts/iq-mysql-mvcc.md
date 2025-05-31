@@ -5,7 +5,7 @@ publishedAt: "2025-05-29"
 summary: "面试题整理"  
 tags:  
   - 面试题整理
-banner: /images/banner/posts/mvcc-yujun.png
+banner: /images/banner/posts/mysql/mvcc-yujun.png
 alt: "图片替代文本"  
 mathjax: false
 ---
