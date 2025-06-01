@@ -1,0 +1,64 @@
+---
+title: "大型电商平台的实时订单分析与监控系统"
+category: Scene technology
+startDate: 2023-12-09
+endDate: 2023-12-09
+publishedAt: 2024-04-08
+summary: "Final Project of CE2012 - Assembly Language and System Programming"
+tags:
+  - Assembly
+  - Game
+  - Ascii Art
+  - Tank
+  - Bogy
+banner: /images/banner/projects/hua-tank.webp
+alt: "Hua Tank V.S. Bogy | Final Project of CE2012 - Assembly Language and System Programming"
+---
+
+# 大型电商平台的实时订单分析与监控系统
+
+一个拥有海量用户和订单的电商平台。**订单数据量巨大**，为了保证数据库性能和可扩展性，订单主数据（如订单表、订单商品表）采用了 ShardingSphere (ShardingJDBC) 进行分库分表。
+
+本文针对大数据量 任何需要订单表数据的场景中。
+
+核心价值却在于清晰演示这三大组件如何各司其职、协同作战，在逻辑层面构建一个高可用、可扩展、查询高效的订单数据处理中枢，我认为这套架构在逻辑上是“正确”且具有前瞻性的。
+
+是一个典型的CQRS（命令查询责任分离）架构，写操作通过MySQL实现，复杂的读操作和搜索通过Elasticsearch实现。
+
+## 实操
+
+项目依赖
+
+### Mysql
+
+在启动应用之前，请确保MySQL环境已按以下步骤配置妥当。我们将通过ShardingSphere将数据分散到两个**逻辑数据库**中，这些逻辑数据库可以映射到本地MySQL实例上的两个实际Schema。
+
+我们需要创建两个独立的数据库（在MySQL中通常称为schemas）来模拟分库的效果。执行以下SQL命令：
+
+```sql
+CREATE DATABASE ds0 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE ds1 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+假设我们每个库分2张表，表后缀为 _0 和 _1）需要创建的表：
+ShardingSphere JDBC 配置的核心逻辑流程其实就三步：数据源，分片规则和分片算法。
+
+**你需要告诉 ShardingSphere** **哪些实际的物理数据库（或数据库实例中的schema）参与分片**。
+
+## ElasticSearch
+
+关系型数据库在复杂，多维度，全文搜索场景下，性能就是个消化，除非砸钱上超高配置，但是终归不优雅。
+
+Elasticsearch，**它为搜索而生。** 我们将MySQL中结构化的订单数据（可能需要做一定的反规范化，形成“宽表”OrderEsDocument）同步到ES中，就能利用其强大的聚合和搜索能力。
+
+专业的事交给专业的工具。ES在这里不是数据的唯一权威来源（Source of Truth 仍然是MySQL），而是针对特定查询场景的优化副本。这种“读写分离”的变体，逻辑上通顺。
+
+但是 Mysql 中的数据变了，ES怎么知道？总不能每次都全量同步吧？
+
+这时候就有一个标准化的流程来解决这个问题：监听Mysql的BinLog，捕获增删改事件，通过消息队列异步🉐通知下游消费者（比如一个专门的同步服务）再写入ES。这是工业级的标配，解耦、可靠、准实时。
+
+我用了Spring的@TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)。当OrderDbService中的事务成功提交后，Spring会发布一个包含OrderDb对象的事件。OrderSyncService监听这个事件，然后将被变更的订单数据（通过ID重新从DB加载最新状态）同步到ES。
+
+这当然不是真正的CDC。它强耦合于应用内部，无法捕获外部DB变更，可靠性也远不如Kafka + Canal。
+
+但对于理解 “数据变更后触发同步”这一核心逻辑，它足够了。清晰地展示了数据流：DB变更 -> 事件触发 -> ES更新。避免了引入过多外部依赖，让项目保持了核心逻辑的纯粹性，这对于一个概念验证项目是合理的。
