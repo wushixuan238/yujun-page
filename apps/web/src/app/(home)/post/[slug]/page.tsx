@@ -142,26 +142,26 @@ export default async function Post(props: { params: tParams }) {
               ></span>
               <span>{post.metadata.category}</span>
             </div>
-            <div className="flex items-center space-x-2 ml-4">
-              <Link
-                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-orange-yellow-crayola transition-colors"
-                aria-label="Share on Facebook"
-              >
-                <LuFacebook className="w-5 h-5" />
-              </Link>
-              <Link
-                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-orange-yellow-crayola transition-colors"
-                aria-label="Share on Twitter"
-              >
-                <LuTwitter className="w-5 h-5" />
-              </Link>
-            </div>
+            {/*<div className="flex items-center space-x-2 ml-4">*/}
+            {/*  <Link*/}
+            {/*    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}*/}
+            {/*    target="_blank"*/}
+            {/*    rel="noopener noreferrer"*/}
+            {/*    className="hover:text-orange-yellow-crayola transition-colors"*/}
+            {/*    aria-label="Share on Facebook"*/}
+            {/*  >*/}
+            {/*    <LuFacebook className="w-5 h-5" />*/}
+            {/*  </Link>*/}
+            {/*  <Link*/}
+            {/*    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`}*/}
+            {/*    target="_blank"*/}
+            {/*    rel="noopener noreferrer"*/}
+            {/*    className="hover:text-orange-yellow-crayola transition-colors"*/}
+            {/*    aria-label="Share on Twitter"*/}
+            {/*  >*/}
+            {/*    <LuTwitter className="w-5 h-5" />*/}
+            {/*  </Link>*/}
+            {/*</div>*/}
           </div>
           <div className="separator"></div>
           <div className="flex justify-center">
