@@ -1,6 +1,6 @@
 ---
 title: "一些Github使用技巧"  
-category: "DevTip"  
+category: "SD"  
 publishedAt: "2025-05-28"  
 summary: "开发技巧"  
 tags:  

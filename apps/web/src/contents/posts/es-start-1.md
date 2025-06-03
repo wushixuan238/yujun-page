@@ -1,6 +1,6 @@
 ---
 title: "ElasticSearch入门（一）：商品搜索系统"  
-category: "ES"  
+category: "SD"  
 publishedAt: "2025-05-31"  
 summary: "ES入门系列"  
 tags:  

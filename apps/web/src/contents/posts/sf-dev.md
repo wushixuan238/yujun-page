@@ -1,6 +1,6 @@
 ---
 title: "什么是镜像字段？"  
-category: "Software Development"  
+category: "SD"  
 publishedAt: "2025-05-03"  
 summary: "做项目遇到的一些问题"  
 tags:  
