@@ -2,17 +2,15 @@
 title: "一些Github使用技巧"  
 category: "SD"  
 publishedAt: "2025-05-28"  
-summary: "开发技巧"  
+summary: "DevTip"  
 tags:  
   - DevTip
-banner: /images/banner/posts/0001-two-sum.webp 
+banner: /images/banner/posts/sd/tip-github.png
 alt: "图片替代文本"  
 mathjax: false
 ---
 
 #  一些Github使用技巧
-
-
 
 
 
