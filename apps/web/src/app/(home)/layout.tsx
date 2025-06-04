@@ -4,6 +4,7 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 import { roboto } from "@/app/fonts";
 import Header from "@/components/layout/header";
+import { ThemeToggle } from "@/components/theme-toggle";
 import SideBar from "@/components/layout/side-bar";
 import Hello from "@/components/hello";
 import { ProgressBar } from "@/components/progress-bar";
@@ -38,7 +39,7 @@ const addJsonLd = (): JsonLdHtml => {
 
 function HomeLayout({ children }: { readonly children: React.ReactNode }) {
   return (
-    <html lang="en" className={roboto.className}>
+    <html lang="en" className={roboto.className} suppressHydrationWarning>
       <WebVitals gaId={googleAnalyticId} />
       <body>
         <ProgressBar className="fixed top-0 h-1 bg-yellow-500">
@@ -53,7 +54,10 @@ function HomeLayout({ children }: { readonly children: React.ReactNode }) {
               status={status}
             />
             <div className="main-content">
-              <Header navigationLinks={navigationLinks} />
+              <div className="flex justify-between items-center">
+                <Header navigationLinks={navigationLinks} />
+                <ThemeToggle />
+              </div>
               {children}
             </div>
           </main>

@@ -1,7 +1,13 @@
+import { ThemeProvider } from "@/contexts/theme-context";
+
 export default function RootLayout({
   children,
 }: {
   readonly children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <ThemeProvider>
+      {children}
+    </ThemeProvider>
+  );
 }
