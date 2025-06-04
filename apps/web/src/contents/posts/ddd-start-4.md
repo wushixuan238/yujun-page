@@ -1,7 +1,7 @@
 ---
 title: "DDD(四)：领域与子域"  
 category: "DDD"  
-publishedAt: "2025-06-04"  
+publishedAt: "2025-06-03"  
 summary: "DDD系列"  
 tags:  
   - DDD
@@ -10,7 +10,7 @@ alt: "图片替代文本"
 mathjax: false
 ---
 
-# DDD（二）：领域与子域
+# DDD(四)：领域与子域
 
 在刚学习DDD的时候，我们会接触到一套特别多的名词：什么领域、子域、核心域、通用域、支撑域、限界上下文、聚合根、实体、值对象…… 。
 
