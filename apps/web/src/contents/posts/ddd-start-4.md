@@ -1,7 +1,7 @@
 ---
 title: "DDD(四)：领域与子域"  
 category: "DDD"  
-publishedAt: "2025-05-01"  
+publishedAt: "2025-06-04"  
 summary: "DDD系列"  
 tags:  
   - DDD
