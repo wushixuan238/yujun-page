@@ -1,8 +1,8 @@
 ---
-title: "DDD入门(二)：深入战术设计：掌握领域模型的“基石"  
+title: "DDD(二)：深入战术设计：掌握领域模型的“基石"  
 category: "DDD"  
 publishedAt: "2025-05-01"  
-summary: "DDD入门系列"  
+summary: "DDD系列"  
 tags:  
   - DDD
 banner: /images/banner/posts/0001-two-sum.webp 

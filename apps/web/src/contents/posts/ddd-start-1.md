@@ -1,8 +1,8 @@
 ---
-title: "DDD入门(二)：应用架构"  
+title: "DDD(一)：应用架构"  
 category: "DDD"  
 publishedAt: "2025-05-29"  
-summary: "DDD入门系列"  
+summary: "DDD系列"  
 tags:  
   - DDD
 banner: /images/banner/posts/0001-two-sum.webp 
