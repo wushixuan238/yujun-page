@@ -3,7 +3,6 @@ import animate from "tailwindcss-animate";
 
 const config: Partial<Config> = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
-  darkMode: ["class"],
   theme: {
     extend: {
       screens: {
