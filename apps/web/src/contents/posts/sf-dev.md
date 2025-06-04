@@ -5,7 +5,7 @@ publishedAt: "2025-05-03"
 summary: "做项目遇到的一些问题"  
 tags:  
   - Software
-banner: /images/banner/posts/0001-two-sum.webp 
+banner: /images/banner/posts/mysql/jing-xiang.png
 alt: "图片替代文本"  
 mathjax: false
 ---
