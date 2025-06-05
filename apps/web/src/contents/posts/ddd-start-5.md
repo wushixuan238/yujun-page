@@ -1,7 +1,7 @@
 ---
 title: "DDD：用事件风暴驱动DDD领域划分"  
 category: "DDD"  
-publishedAt: "2025-05-29"  
+publishedAt: "2025-06-03"  
 summary: "DDD系列"  
 tags:  
   - DDD
