@@ -5,7 +5,7 @@ publishedAt: "2025-05-28"
 summary: "BugRecord"  
 tags:  
   - BugRecord
-banner: images/banner/posts/es/es-01.png
+banner: images/banner/posts/bug/bug-01.png
 alt: "图片替代文本"  
 mathjax: false
 ---
