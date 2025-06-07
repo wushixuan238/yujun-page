@@ -1,6 +1,6 @@
 ---
 title: "Microservice(一)：C端应用架构从单体到分布式实践"
-category: "Software Development"
+category: "SD"
 publishedAt: "2025-06-01"
 summary: "SD"  
 tags:  
