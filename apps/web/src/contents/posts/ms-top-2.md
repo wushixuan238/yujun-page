@@ -1,7 +1,7 @@
 ---
 title: "Microservice(二)：深入理解事务性发件箱模式"
 category: "Software Development"
-publishedAt: "2025-06-01"
+publishedAt: "2025-06-06"
 summary: "SD"  
 tags:  
   - Microservice
