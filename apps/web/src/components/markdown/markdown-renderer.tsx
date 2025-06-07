@@ -75,12 +75,35 @@ function MarkdownRenderer({ className, content }: MarkdownRendererProps) {
           <BlockQuote {...props}>{props.children}</BlockQuote>
         ),
         code({ node, inline, className, children, ...props }: any) {
-          const match = /language-(\w+)/.exec(className || "");
-
-          return !inline && match ? (
-            <CodeBlock language={match[1]}>{children}</CodeBlock>
-          ) : (
-            <code className={className} {...props}>
+          // 分析language标记中的文件名和其他选项
+          const match = /language-(\w+)(?:{([^}]+)})?/.exec(className || "");
+          
+          if (!inline && match) {
+            const language = match[1];
+            const metaString = match[2] || "";
+            
+            // 解析元信息
+            const meta = {};
+            const fileNameMatch = metaString.match(/title=["']([^"']+)["']/);
+            const showLineNumbers = !metaString.includes("showLineNumbers=false");
+            
+            if (fileNameMatch) {
+              meta["fileName"] = fileNameMatch[1];
+            }
+            
+            return (
+              <CodeBlock 
+                language={language}
+                fileName={meta["fileName"]} 
+                showLineNumbers={false}
+              >
+                {children}
+              </CodeBlock>
+            );
+          }
+          
+          return (
+            <code className={`${className} px-1 py-0.5 mx-0.5 dark:text-gray-300 text-gray-700`} {...props}>
               {children}
             </code>
           );

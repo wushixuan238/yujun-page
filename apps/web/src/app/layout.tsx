@@ -7,30 +7,37 @@ export default function RootLayout({
   readonly children: React.ReactNode;
 }) {
   return (
-    <html lang="zh-CN" className={`${roboto.className} dark`}>
+    // 使用suppressHydrationWarning属性抑制水合错误警告
+    <html lang="zh-CN" className={roboto.className} suppressHydrationWarning>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="dark light" />
+      </head>
+      <body suppressHydrationWarning>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                // 默认使用暗色主题
-                document.documentElement.classList.add('dark');
-                // 检查本地存储是否有存储的主题设置
-                const storedTheme = localStorage.getItem('theme');
-                // 仅当明确设置为light时才移除dark类
-                if (storedTheme === 'light') {
-                  document.documentElement.classList.remove('dark');
-                  document.documentElement.classList.add('light');
+                try {
+                  // 立即应用主题，避免闪烁
+                  var storedTheme = localStorage.getItem('theme');
+                  var theme = storedTheme === 'light' ? 'light' : 'dark';
+                  
+                  // 先移除所有主题类，再添加新主题
+                  document.documentElement.classList.remove('light', 'dark');
+                  document.documentElement.classList.add(theme);
+                } catch (e) {
+                  // 出错时使用默认的暗色主题
+                  document.documentElement.classList.remove('light', 'dark');
+                  document.documentElement.classList.add('dark');
                 }
               })();
             `,
           }}
         />
-      </head>
-      <body>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
       </body>
     </html>
   );
