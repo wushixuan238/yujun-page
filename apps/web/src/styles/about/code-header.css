@@ -1,0 +1,19 @@
+/* 命令行标题样式覆盖 */
+.code-header-clean code {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* 亮色模式特定样式 */
+html:not(.dark) .code-header-clean code {
+  background-color: white !important;
+}
+
+/* 暗色模式特定样式 */
+html.dark .code-header-clean code {
+  background-color: transparent !important;
+}

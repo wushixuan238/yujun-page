@@ -7,17 +7,36 @@
 }
 
 .avatar-box {
-    background: var(--bg-gradient-onyx);
     border-radius: 20px;
 }
 
+html.dark .avatar-box {
+    background: var(--bg-gradient-onyx);
+}
+
+html:not(.dark) .avatar-box {
+    background: linear-gradient(to bottom right, #f5f5f5, #e0e0e0);
+    border: 1px solid #ddd;
+}
+
 .info-content .name {
-    color: var(--white-2);
     font-size: var(--fs-3);
     font-weight: var(--fw-600);
     letter-spacing: -0.25px;
     margin-bottom: 10px;
+}
+
+html.dark .info-content .name {
+    color: var(--white-2);
     background: linear-gradient(180deg, #fff, #adadad);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+html:not(.dark) .info-content .name {
+    color: #1a1a1a;
+    background: linear-gradient(180deg, #333, #000);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

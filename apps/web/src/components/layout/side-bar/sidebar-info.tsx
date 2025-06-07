@@ -54,7 +54,7 @@ function SideBarInfo({
           {/* {firstName} ({preferredName}) {lastName} */}
           {firstName} {lastName}
         </h1>
-        <p className="text-white-1 bg-onyx text-xs font-light max-w-max rounded-[8px] custom-lg:m-auto px-3 py-1 md:px-[18px] md:py-[5px]">
+        <p className="dark:text-white-1 text-gray-800 dark:bg-onyx bg-gray-100 text-xs font-light max-w-max rounded-[8px] custom-lg:m-auto px-3 py-1 md:px-[18px] md:py-[5px] border dark:border-transparent border-gray-200">
           {status}
         </p>
       </div>

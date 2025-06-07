@@ -6,6 +6,41 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    /* 亮色模式（默认）*/
+    --background: 0, 0%, 100%;
+    --text: 0, 0%, 10%; /* 新的更深的文本颜色 */
+    --card-bg: 0, 0%, 98%;
+    --card-border: 0, 0%, 85%;
+    --heading: 0, 0%, 5%; /* 更深的标题 */
+    --link: 210, 100%, 45%;
+    --link-hover: 210, 100%, 35%;
+  }
+
+  .dark {
+    /* 暗色模式 */
+    --background: 240, 10%, 10%;
+    --text: 0, 0%, 95%;
+    --card-bg: 240, 2%, 12%;
+    --card-border: 0, 0%, 22%;
+    --heading: 0, 0%, 98%;
+    --link: 210, 100%, 72%;
+    --link-hover: 210, 100%, 82%;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--text));
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* 确保所有文本内容都使用文本颜色变量 */
+  p, span, div, li, td, th, blockquote, a:not([class]) {
+    color: hsl(var(--text));
+  }
+}
+
 :root {
   /**
   * colors
@@ -150,7 +185,7 @@ textarea {
 }
 
 body {
-  background: var(--smoky-black);
+  background-color: hsl(var(--background));
 }
 
 /*-----------------------------------*\
@@ -159,19 +194,74 @@ body {
 
 .sidebar,
 article {
-  background: var(--eerie-black-2);
-  border: 1px solid var(--jet);
   border-radius: 20px;
   padding: 15px;
-  box-shadow: var(--shadow-1);
   z-index: 1;
+}
+
+/* 暗色和亮色模式下的样式，使用CSS变量 */
+.sidebar,
+article {
+  background-color: hsl(var(--card-bg));
+  border: 1px solid hsl(var(--card-border));
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 强制文章内容中的文本在亮色模式下显示为黑色 */
+article p,
+article span,
+article div,
+article li,
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  color: hsl(var(--text)) !important;
+}
+
+/* 代码块在亮色和暗色模式下的样式 */
+pre, code {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+/* 暗色模式的代码块 */
+html.dark pre, 
+html.dark code,
+html.dark .blog-post-item pre, 
+html.dark .blog-post-item code {
+  background-color: #1e1e1e !important;
+  color: #d4d4d4 !important;
+  border: 1px solid #333 !important;
+}
+
+/* 亮色模式的代码块 */
+pre, code,
+.blog-post-item pre,
+.blog-post-item code {
+  background-color: #f0f2f5 !important;
+  color: #1a1a1a !important;
+  border: 1px solid #ddd !important;
+  border-radius: 5px;
+  padding: 0.2em 0.4em;
 }
 
 .separator {
   width: 100%;
   height: 1px;
-  background: var(--jet);
   margin: 16px 0;
+}
+
+/* 暗色模式下的分隔线 */
+.dark .separator {
+  background: var(--jet);
+}
+
+/* 亮色模式下的分隔线 */
+.separator {
+  background: #e0e0e0;
 }
 
 .separator-no-line {
@@ -207,7 +297,7 @@ article {
 .h3,
 .h4,
 .h5 {
-  color: var(--white-2);
+  color: hsl(var(--heading));
   text-transform: capitalize;
 }
 
@@ -384,13 +474,13 @@ main {
 
 
 .relevant-courses-list span {
-  color: var(--vegas-gold);
+  color: hsl(var(--link));
   font-weight: var(--fw-400);
   line-height: 1.6;
 }
 
 .timeline-list span {
-  color: var(--vegas-gold);
+  color: hsl(var(--link));
   font-weight: var(--fw-400);
   line-height: 1.6;
 }
@@ -402,7 +492,7 @@ main {
   left: -30px;
   width: 1px;
   height: calc(100% + 50px);
-  background: var(--jet);
+  background: hsl(var(--card-border));
 }
 
 .timeline-item::after {
@@ -412,29 +502,29 @@ main {
   left: -33px;
   height: 6px;
   width: 6px;
-  background: var(--text-gradient-yellow);
+  background: hsl(var(--link));
   border-radius: 50%;
-  box-shadow: 0 0 0 4px var(--jet);
+  box-shadow: 0 0 0 4px hsl(var(--card-border));
 }
 
 .content-highlight-yellow {
-  color: var(--orange-yellow-crayola);
+  color: hsl(var(--link));
   display: inline;
 }
 
 .code-highlight-yellow {
-  color: var(--orange-yellow-crayola);
+  color: hsl(var(--link));
   display: inline;
 }
 
 .timeline-list p span {
   float: right;
-  color: var(--white-1);
+  color: hsl(var(--text));
 }
 
 .timeline-list h4 span {
   float: right;
-  color: var(--white-1);
+  color: hsl(var(--text));
 }
 
 /*-----------------------------------*\
@@ -452,7 +542,7 @@ main {
 
 .filter-select {
   background: var(--eerie-black-2);
-  color: var(--light-gray);
+  color: hsl(var(--text));
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -469,7 +559,7 @@ main {
 }
 
 .select-list {
-  background: var(--eerie-black-2);
+  background-color: hsl(var(--card-bg));
   position: absolute;
   top: calc(100% + 6px);
   width: 100%;
@@ -491,7 +581,7 @@ main {
 
 .select-item button {
   background: var(--eerie-black-2);
-  color: var(--light-gray);
+  color: hsl(var(--text));
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   text-transform: capitalize;
@@ -502,7 +592,7 @@ main {
 
 .select-item button a {
   background: var(--eerie-black-2);
-  color: var(--light-gray);
+  color: hsl(var(--text));
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   text-transform: capitalize;
@@ -618,7 +708,7 @@ main {
 }
 
 .project-title {
-  color: var(--white-2);
+  color: hsl(var(--heading));
   font-size: var(--fs-5);
   font-weight: var(--fw-400);
   text-transform: capitalize;
@@ -626,7 +716,7 @@ main {
 }
 
 .project-category {
-  color: var(--light-gray-70);
+  color: hsl(var(--text) / 0.7);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
 }
@@ -654,11 +744,12 @@ main {
   animation: scaleUp 0.25s ease forwards;
 }
 
+/* 博客文章卡片样式，适应亮色和暗色模式 */
 .blog-post-item.active>a {
   position: relative;
-  background: var(--border-gradient-onyx);
+  background: hsl(var(--card-border));
   height: 100%;
-  box-shadow: var(--shadow-4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   z-index: 1;
 }
@@ -668,8 +759,9 @@ main {
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background: var(--eerie-black-1);
+  background: hsl(var(--card-bg));
   z-index: -1;
+  transition: background-color 0.3s ease;
 }
 
 .blog-banner-box {
@@ -703,13 +795,13 @@ main {
 }
 
 .blog-meta :is(.blog-category, time) {
-  color: var(--light-gray-70);
+  color: hsl(var(--text) / 0.7);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
 }
 
 .blog-meta .dot {
-  background: var(--light-gray-70);
+  background: hsl(var(--text) / 0.7);
   width: 4px;
   height: 4px;
   border-radius: 4px;
@@ -758,11 +850,11 @@ main {
 }
 
 .form-input {
-  color: var(--white-2);
+  color: hsl(var(--text));
   font-size: var(--fs-6);
   font-weight: var(--fw-400);
   padding: 13px 20px;
-  border: 1px solid var(--jet);
+  border: 1px solid hsl(var(--card-border));
   border-radius: 14px;
   outline: none;
 }
@@ -772,7 +864,7 @@ main {
 }
 
 .form-input:focus {
-  border-color: var(--orange-yellow-crayola);
+  border-color: hsl(var(--link));
 }
 
 textarea.form-input {
@@ -1073,13 +1165,13 @@ textarea.form-input::-webkit-resizer {
   }
 
   .filter-item button {
-    color: var(--light-gray);
+    color: hsl(var(--text));
     font-size: var(--fs-5);
     transition: var(--transition-1);
   }
 
   .filter-item a {
-    color: var(--light-gray);
+    color: hsl(var(--text));
     font-size: var(--fs-5);
     transition: var(--transition-1);
   }

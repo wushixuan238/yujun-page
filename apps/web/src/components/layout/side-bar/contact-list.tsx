@@ -18,7 +18,7 @@ function ContactsList({ contacts }: ContactsListProps) {
         const ContentElement = link ? (
           <Link
             href={link}
-            className="block text-white-2 text-sm font-light truncate hover:text-orange-yellow-crayola
+            className="block dark:text-white-2 text-gray-800 text-sm font-light truncate hover:text-orange-yellow-crayola
             transition-colors"
             target="_blank"
             rel="noopener noreferrer"
@@ -26,7 +26,7 @@ function ContactsList({ contacts }: ContactsListProps) {
             {content}
           </Link>
         ) : (
-          <span className="block text-white-2 text-sm font-light truncate">
+          <span className="block dark:text-white-2 text-gray-800 text-sm font-light truncate">
             {content}
           </span>
         );
@@ -35,7 +35,7 @@ function ContactsList({ contacts }: ContactsListProps) {
           <li key={index} className="min-w-full flex items-center gap-4">
             <IconBox icon={Icon} />
             <div className="contact-info">
-              <p className="text-light-gray-70 uppercase mb-1 text-xs">
+              <p className="dark:text-light-gray-70 text-gray-800 uppercase mb-1 text-xs">
                 {title}
               </p>
               {ContentElement}

@@ -8,6 +8,7 @@ import SideBar from "@/components/layout/side-bar";
 import Hello from "@/components/hello";
 import { ProgressBar } from "@/components/progress-bar";
 import { WebVitals } from "@/components/web-vitals";
+import { ThemeProvider } from "@/contexts/theme-context";
 import config from "@/config";
 
 import type { Metadata } from "next";
@@ -38,9 +39,9 @@ const addJsonLd = (): JsonLdHtml => {
 
 function HomeLayout({ children }: { readonly children: React.ReactNode }) {
   return (
-    <html lang="en" className={roboto.className}>
+    <>
       <WebVitals gaId={googleAnalyticId} />
-      <body>
+      <ThemeProvider>
         <ProgressBar className="fixed top-0 h-1 bg-yellow-500">
           <Hello />
           <main>
@@ -58,16 +59,16 @@ function HomeLayout({ children }: { readonly children: React.ReactNode }) {
             </div>
           </main>
         </ProgressBar>
-        <Script
-          id="application/ld+json"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={addJsonLd()}
-          key="1chooo-website-jsonld"
-        />
-      </body>
+      </ThemeProvider>
+      <Script
+        id="application/ld+json"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={addJsonLd()}
+        key="1chooo-website-jsonld"
+      />
       <GoogleAnalytics gaId={googleAnalyticId} />
       <GoogleTagManager gtmId={googleTagManagerId} />
-    </html>
+    </>
   );
 }
 

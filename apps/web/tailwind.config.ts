@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 import animate from "tailwindcss-animate";
 
 const config: Partial<Config> = {
+  darkMode: 'class',
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
@@ -11,6 +12,7 @@ const config: Partial<Config> = {
       },
       colors: {
         jet: "hsl(0, 0%, 22%)",
+        // jet: "hsl(0, 33.30%, 98.20%)",
         onyx: "hsl(240, 1%, 17%)",
         "eerie-black-1": "hsl(240, 2%, 13%)",
         "eerie-black-2": "hsl(240, 2%, 12%)",

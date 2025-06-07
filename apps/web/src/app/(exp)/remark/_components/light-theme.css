@@ -480,8 +480,8 @@
 :root[data-mode="light"] [class*="reaction"],
 :root[data-mode="light"] [id*="comment"],
 :root[data-mode="light"] [id*="reaction"] {
-  background-color: #ffffff !important;
-  color: #000000 !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
   border-color: #e0e0e0 !important;
 }
 
@@ -492,7 +492,7 @@
 :root[data-mode="light"] [class*="markdown"],
 :root[data-mode="light"] [role="textbox"] {
   background-color: #ffffff !important;
-  color: #000000 !important;
+  color: #ffffff !important;
   border: 1px solid #e0e0e0 !important;
 }
 

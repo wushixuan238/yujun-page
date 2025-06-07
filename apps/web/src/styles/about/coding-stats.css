@@ -6,8 +6,17 @@
 
 .coding-item::before {
   inset: 1px;
-  background: var(--bg-gradient-jet);
   z-index: -1;
+}
+
+html.dark .coding-item::before {
+  background: var(--bg-gradient-jet);
+}
+
+html:not(.dark) .coding-item::before {
+  background: #ffffff;
+  border: none;
+  box-shadow: none;
 }
 
 .tech-stack-container {
