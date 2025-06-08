@@ -388,9 +388,9 @@ const config: Config = {
     },
     giscusConfig: {
         id: "comments",
-        repo: "1chooo/1chooo.com",
-        repoId: process.env.NEXT_PUBLIC_GISCUS_REPO_ID || "",
-        category: "General",
+        repo: "wushixuan238/yujun-page",
+        repoId: "R_kgDOOxWdGQ",
+        category: "Announcements",
         categoryId: process.env.NEXT_PUBLIC_GISCUS_CONFIG_CATEGORY_ID || "",
         mapping: "pathname",
         term: "Welcome to @giscus/react component!",

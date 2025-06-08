@@ -29,6 +29,12 @@ function MarkdownRenderer({ className, content }: MarkdownRendererProps) {
           <Paragraph node={node} children={children} {...props} />
         ),
         a: (props) => <Anchor {...props} />,
+        strong: ({ node, children, ...props }) => (
+          <strong className="font-bold" {...props}>{children}</strong>
+        ),
+        em: ({ node, children, ...props }) => (
+          <em className="italic" {...props}>{children}</em>
+        ),
         sup: "sup",
         sub: "sub",
         img: (props) => <MarkdownImage src={props.src ?? ""} alt={props.alt} />,
