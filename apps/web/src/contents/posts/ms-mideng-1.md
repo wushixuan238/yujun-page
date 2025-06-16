@@ -1,5 +1,5 @@
 ---
-title: "幂等性方案"  
+title: "Microservice(三)：幂等性方案"  
 category: "SD"  
 publishedAt: "2025-06-12"  
 summary: "SD"  
