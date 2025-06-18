@@ -18,3 +18,14 @@ alt: "Hua Tank V.S. Bogy | Final Project of CE2012 - Assembly Language and Syste
 在之前的文章里，我们畅想了万象智联(Agent Nexus)这个AI能力协同中枢的宏伟蓝图。我们知道它能通过数据库配置，动态地编排出千变万化的智能应用。
 
 但是，这一切魔法的背后，其运行的逻辑究竟是怎样的？
+
+## 基石——可插拔的“大脑” (模型抽象层)
+
+让我们从图的顶部看起。
+OllamaApi → OllamaAIChatModel
+OpenAIApi → OpenAIChatModel
+
+这是整个架构的基石——模型无关性。
+在一个模型技术日新月异的时代，一个成熟的AI架构绝不能被任何单一模型“绑架”。“万象智联”的设计完美地体现了这一点。
+
+它通过一个统一的...AIChatModel接口，将不同模型提供商（如OpenAI、本地Ollama）的API细节完全屏蔽。
