@@ -1,0 +1,29 @@
+.service-item {
+    padding: 20px;
+    z-index: 1;
+}
+
+.service-item::before {
+    inset: 1px;
+    z-index: -1;
+}
+
+html.dark .service-item::before {
+    background: var(--bg-gradient-jet);
+}
+
+html:not(.dark) .service-item::before {
+    background: #ffffff;
+    border: none;
+    box-shadow: none;
+}
+
+@media (min-width: 580px) {
+    .service-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 18px;
+        padding: 30px;
+    }
+}
