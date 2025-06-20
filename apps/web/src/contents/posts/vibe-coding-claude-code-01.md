@@ -1,17 +1,17 @@
 ---
-title: "一些Github使用技巧"  
-category: "SD"  
+title: "`claude-code`：把 Claude AI，直接请进你的Terminal"  
+category: "Vibe-Coding"  
 publishedAt: "2025-05-28"  
 summary: "Vibe-Coding"  
 tags:  
-  - DevTip
+  - Vibe-Coding
 banner: /images/banner/posts/sd/tip-github.png
 alt: "图片替代文本"  
 mathjax: false
 ---
 
 
-# **`claude-code`：把 Claude AI，直接请进你的Terminal**
+# `claude-code`：把 Claude AI，直接请进你的Terminal
 
 你是否曾迷失在前辈留下的、浩如烟海的百万行代码库里，只为寻找一个函数的定义？或者，为了完成一个繁琐的重构任务，在无数个文件之间跳转、修改，耗费了整整一个下午？
 
