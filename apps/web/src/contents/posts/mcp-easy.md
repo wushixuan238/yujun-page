@@ -1,6 +1,6 @@
 ---
 title: "MCP 入门理解"  
-category: "MCP"  
+category: "AI"  
 publishedAt: "2025-04-29"  
 summary: "谈谈我对MCP的一个简单理解"  
 tags:  

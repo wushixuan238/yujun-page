@@ -1,6 +1,6 @@
 ---
 title: "Langchain4j（二）：AiService"  
-category: "Langchain4j"  
+category: "AI"  
 publishedAt: "2025-05-29"  
 summary: "Langchain4j"  
 tags:  
