@@ -58,6 +58,36 @@ github.com --> deepwiki.com
 
 ---
 
+
+### 快速切换 Git 代理设置
+
+有时候，我们在公司内网需要取消代理才能上传到仓库，而回到家后又要设置代理访问 GitHub。手动修改 Git 配置很麻烦，这里分享几个快捷命令，一键切换 Git 代理设置。
+
+
+- 查看Git当前代理设置
+```bash
+git config --global --get http.proxy
+git config --global --get https.proxy
+```
+
+- 设置 Git 走代理
+```bash
+git config --global http.proxy http://127.0.0.1:7890
+git config --global https.proxy http://127.0.0.1:7890
+
+git config --global http.proxy socks5://127.0.0.1:10808
+git config --global https.proxy socks5://127.0.0.1:10808 
+```
+根据代理工具调整（如 Clash、V2Ray）。
+
+- 取消 Git 代理
+
+```bash
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+
 ###  **in 限制搜索范围**
 
 它让你能够更精确地告诉 GitHub “我在找这个词，但只在标题里找，或者只在描述里找，或者只在评论里找”等等。这极大地提高了搜索的效率和结果的相关性。
