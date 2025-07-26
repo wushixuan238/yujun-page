@@ -34,7 +34,7 @@ import {
 } from "react-icons/tb";
 
 const config: Config = {
-    avatar: "/images/profile.jpg",
+    avatar: "/images/profile1.jpg",
     title: "Yujun Pan's Personal Homepage",
     description:
         "I'm Yujun Pan, a graduate with a Bachelor's degree from Anhui University (AHU), driven by a sincere passion for Software Engineering 💻.",
