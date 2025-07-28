@@ -190,6 +190,16 @@ claude migrate-installer
 
 
 配置 API KEY；
+
+在终端中输入以下命令来查看正在使用的 Shell：
+```bash
+echo $SHELL
+```
+- 如果输出结果包含 zsh (例如 /bin/zsh)，那么使用的是 Zsh。 需要编辑的文件是：~/.zshrc
+- 如果输出结果包含 bash (例如 /bin/bash)，那么使用的是 Bash。需要编辑的文件是：~/.bashrc
+
+
+
 ```bash
 # 将 YOUR_KIMI_API_KEY 替换为你自己的 Kimi API Key
 
