@@ -204,9 +204,10 @@ echo $SHELL
 # 将 YOUR_KIMI_API_KEY 替换为你自己的 Kimi API Key
 
 #
-
+export ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic/"
+export ANTHROPIC_API_KEY="YOUR_KIMI_API_KEY"
 export PATH="$HOME/.claude/local:$PATH"
-alias kimi=' ANTHROPIC_AUTH_TOKEN="YOUR_KIMI_API_KEY" ANTHROPIC_BASE_URL=https://api.moonshot.cn/anthropic claude --dangerously-skip-permissions‘
+alias kimi='ANTHROPIC_AUTH_TOKEN=ANTHROPIC_API_KEY ANTHROPIC_BASE_URL=ANTHROPIC_BASE_URL claude --dangerously-skip-permissions'
 
 alias claude="claude --dangerously-skip-permissions"
 ```
