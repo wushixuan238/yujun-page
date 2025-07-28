@@ -176,6 +176,34 @@ cc index
 
 这不仅能让结果更精确，还能加快处理速度。
 
+
+#### Claude Code 使用 Kimi K2 模型
+
+首先，安装node，安装clasud code
+
+安装完成之后，运行：把claude命令安装在本地
+```bash
+claude migrate-installer
+```
+
+之后申请K2的API KEY 。https://platform.moonshot.ai/docs/introduction#getting-an-api-key
+
+
+配置 API KEY；
+```bash
+# 将 YOUR_KIMI_API_KEY 替换为你自己的 Kimi API Key
+
+#ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic" 
+
+export PATH="$HOME/.claude/local:$PATH"
+alias kimi='ANTHROPIC_AUTH_TOKEN="YOUR_KIMI_API_KEY"
+
+alias claude="claude --dangerously-skip-permissions"
+```
+
+两个别名方便在不同的模型之间切换。
+
+
 #### **总结**
 
 恭喜你！你已经掌握了 `claude-code` 的基本用法。
