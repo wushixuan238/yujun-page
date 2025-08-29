@@ -82,30 +82,31 @@ public class RaffleController {
 
 ```yaml
 # 数据采集
-  prometheus:
-    image: bitnami/prometheus:2.47.2
-    container_name: prometheus
-    restart: always
-    ports:
-      - 9099:9090
-    volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-    networks:
-      - my-network
+prometheus:
+  image: bitnami/prometheus:2.47.2
+  container_name: prometheus
+  restart: always
+  ports:
+    - 9099:9090
+  volumes:
+    - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml  # 挂载主配置文件
+    - ./prometheus/alerts.yml:/etc/prometheus/alerts.yml  # 挂载告警规则文件
+  networks:
+    - my-network
 
-  # 监控界面
-  grafana:
-    image: grafana/grafana:10.2.0
-    container_name: grafana
-    restart: always
-    ports:
-      - 4000:4000
-    depends_on:
-      - prometheus
-    volumes:
-      - ./grafana:/etc/grafana
-    networks:
-      - my-network
+# 监控界面
+grafana:
+  image: grafana/grafana:10.2.0
+  container_name: grafana
+  restart: always
+  ports:
+    - 4000:4000
+  depends_on:
+    - prometheus
+  volumes:
+    - ./grafana:/etc/grafana
+  networks:
+    - my-network
 
 networks:
   my-network:
@@ -169,6 +170,44 @@ scrape_configs:
 
 这个配置的唯一作用就是让 Prometheus 每隔 15 秒抓取它自己。
 所以，结果就是会得到一个成功运行、但毫无用处的 Prometheus 容器。它能监控自己的健康状况，但对于你的任何其他应用（比如 Spring Boot、MySQL 等）都一无所知。
+
+### 告警配置（Prometheus Alertmanager）
+
+仅仅监控是不够的，还需要配置告警，以便在问题发生时及时通知到我们。
+
+实现也很简单，主要分为两步：
+- **定义告警规则**： 在Prometheus的 alert.rules 文件中定义告警规则。
+- **配置Alertmanager**： 配置Prometheus与Alertmanager集成，以及Alertmanager的告警接收方（邮件、Slack、Webhook等）。
+
+```yaml
+# alerts.yml (示例)
+groups:
+  - name: jvm-alerts
+    rules:
+      - alert: JvmHeapUsageHigh
+        expr: (jvm_memory_bytes_used{area="heap",id="G1OldGen"} / jvm_memory_bytes_max{area="heap",id="G1OldGen"}) * 100 > 80
+        for: 5m
+        labels:
+          severity: critical
+          component: jvm
+        annotations:
+          summary: "JVM {{ $labels.application }} ({{ $labels.instance }}) 老年代堆内存使用率过高"
+          description: "当前使用率：{{ $value }}%。可能存在内存泄漏或GC压力过大，请检查GC日志和堆dump。"
+
+      - alert: JvmFullGcFrequent
+        # 计算过去5分钟内，Full GC每秒发生的次数
+        expr: sum(rate(jvm_gc_collection_seconds_count{gc_type=~".*Full.*"}[5m])) > 0.01
+        for: 2m
+        labels:
+          severity: warning
+          component: jvm
+        annotations:
+          summary: "JVM {{ $labels.application }} ({{ $labels.instance }}) Full GC发生频率过高"
+          description: "过去5分钟Full GC平均频率：{{ $value }}次/秒。可能存在内存泄漏或G1配置不当。"
+```
+注意这里alerts.yml 文件需要通过 Docker 的卷（Volume）机制挂载到 Prometheus 容器内部，并且需要在 prometheus.yml 中引用它。
+
+因为 Prometheus 容器本身是一个独立的运行环境。如果你不挂载这个文件，容器启动后是找不到你的告警规则的。
 
 
 
