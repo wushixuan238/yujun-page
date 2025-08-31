@@ -4,7 +4,7 @@ category: "Article"
 publishedAt: "2025-06-29"  
 summary: "Article"  
 tags:  
-  - Article
+  - ReadCode
 banner: /images/banner/posts/redisson/redisson-3.png
 alt: "图片替代文本"  
 mathjax: false

@@ -215,6 +215,16 @@ alias claude="claude --dangerously-skip-permissions"
 两个别名方便在不同的模型之间切换。
 
 
+项目需求：
+- Ant Design Pro 管理后台
+- 修改用户信息和水印
+- 新增页面，并且填充数据
+
+技术要点：
+- React + TypeScript
+- 使用Ant Design Pro
+- Mock数据合理
+
 #### **总结**
 
 恭喜你！你已经掌握了 `claude-code` 的基本用法。
