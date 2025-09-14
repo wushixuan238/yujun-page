@@ -1,8 +1,8 @@
 ---
 title: "Redisson源码（三）：释放锁"  
-category: "Article"  
+category: "ReadCode"  
 publishedAt: "2025-06-29"  
-summary: "Article"  
+summary: "ReadCode"  
 tags:  
   - ReadCode
 banner: /images/banner/posts/redisson/redisson-3.png
