@@ -136,11 +136,13 @@ public class OrderTransactionListener implements TransactionListener {
 }
 ```
 
-`executeLocalTransaction`负责执行业务，`checkLocalTransaction`负责兜底。
+**核心就是**实现`TransactionListener`接口的两个方法：`executeLocalTransaction`负责执行业务，`checkLocalTransaction`负责兜底。
 
 但是注意，在实际项目中，`checkLocalTransaction`方法里，不应该像这样用一个内存里的Map来存状态，这里只是帮助理解。而应该去查数据库里的事务状态表，这样才能保证应用重启后状态不丢失。
 
-最后，发送消息的方式也变了，要用`sendMessageInTransaction`。
+最后，发送消息的方式也变了，要用`sendMessageInTransaction`。需要使用专门的 TransactionMQProducer，并调用 sendMessageInTransaction() 方法来发送消息。
+
+总结一下，自己实现就是这四点要注意：Listener实现接口的两个方法。需要使用专门的生产者去调用专门的方法去发送消息。
 
 ```java
 // 发送事务消息
