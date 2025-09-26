@@ -131,13 +131,16 @@ end
 if last_tokens > 0 then
     last_tokens = last_tokens - 1
     -- 使用 HMSET 更新桶的状态
-    redis.call('HMSET', key, 'tokens', last_tokens, 'last_refill_timestamp', last_refill_timestamp)
+    redis.call('HMSET', key, 'tokens', 
+     , 'last_refill_timestamp', last_refill_timestamp)
     -- 设置一个合理的过期时间，防止冷数据占用内存
     redis.call('EXPIRE', key, capacity / rate * 2) 
+    
     return 1 -- 返回 1 表示成功
 else
     -- 即使令牌不够，也要更新状态，以便下次计算
-    redis.call('HMSET', key, 'tokens', last_tokens, 'last_refill_timestamp', last_refill_timestamp)
+    redis.call('HMSET', key, 'tokens', last_tokens, 
+    'last_refill_timestamp', last_refill_timestamp)
     redis.call('EXPIRE', key, capacity / rate * 2)
     return 0 -- 返回 0 表示失败
 end
