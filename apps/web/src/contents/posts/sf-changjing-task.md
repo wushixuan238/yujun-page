@@ -1,6 +1,6 @@
 ---
 title: "本地消息表的性能瓶颈问题"  
-category: "SD"  
+category: "SB-Q"  
 publishedAt: "2025-10-18"  
 summary: "场景题思考"  
 tags:  
