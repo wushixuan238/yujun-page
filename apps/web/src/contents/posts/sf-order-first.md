@@ -1,5 +1,5 @@
 ---
-title: 订单先行（Order-First Pattern）"  
+title: 一种订单先行的code思想"  
 category: "SB-Q"  
 publishedAt: "2025-10-19"  
 summary: "场景题思考"  
