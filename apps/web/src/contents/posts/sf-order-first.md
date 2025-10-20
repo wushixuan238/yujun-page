@@ -1,5 +1,5 @@
 ---
-title: "一种订单先行的code思想"  
+title: "一种订单先行的code思想"
 category: "SB-Q"  
 publishedAt: "2025-10-19"  
 summary: "场景题思考"  
@@ -13,7 +13,6 @@ mathjax: false
 # 一种订单先行的code思想
 
 最近在做项目的过程中，发现在几个核心场景中都用到了一种类似的思想，在此做个总结。
-
 
 话不多说，先附上代码。
 
